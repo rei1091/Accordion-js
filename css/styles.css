@@ -1,0 +1,62 @@
+h1 {
+  font-size: 24px;
+  color: blue;
+  border-bottom: 10px groove;
+  padding: 8px 60px;
+  margin-bottom: 16px;
+}
+
+dl {
+  margin: 0;
+}
+
+dl > div {
+  margin-bottom: 10px;
+}
+dt {
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+dl > div.appear dt::after {
+  transform: rotate(45deg);
+}
+
+dt::after {
+  content: "+";
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  transition: transform 0.5s;
+}
+dt::before {
+  content: "Q. ";
+}
+
+dd {
+  padding: 5px;
+  margin: 0;
+  display: none;
+}
+
+dd::before {
+  content: "A. ";
+}
+
+dl > div.appear dd {
+  display: block;
+  animation: 0.5s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: 0;
+  }
+}
